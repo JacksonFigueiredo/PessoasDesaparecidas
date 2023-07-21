@@ -1,4 +1,5 @@
-﻿using WebApplication1.Enums;
+﻿using PessoasDesaparecidas.Models;
+using WebApplication1.Enums;
 
 namespace WebApplication1.Models
 {
@@ -14,6 +15,8 @@ namespace WebApplication1.Models
         public Sexo SexoPessoa { get; set; }
         public DateTime DataDeNascimento { get; set; }
         public CorDosOlhos CorDosOlhosPessoa { get; set; }
+
+        public Desaparecimento Desaparecimento { get; set; }
 
         public Pessoa(string nome, Sexo sexo, DateTime dataDeNascimento, CorDosOlhos corDosOlhos)
         {
