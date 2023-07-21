@@ -16,6 +16,7 @@ namespace WebApplication1.Models
         public DateTime DataDeNascimento { get; set; }
         public CorDosOlhos CorDosOlhosPessoa { get; set; }
 
+
         public Desaparecimento Desaparecimento { get; set; }
 
         public Pessoa(string nome, Sexo sexo, DateTime dataDeNascimento, CorDosOlhos corDosOlhos)

@@ -1,6 +1,8 @@
 
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using PessoasDesaparecidas.Data;
+using PessoasDesaparecidas.Helpers;
 using PessoasDesaparecidas.Interfaces;
 using PessoasDesaparecidas.Services;
 using WebApplication1.Services;
@@ -21,6 +23,8 @@ namespace WebApplication1
             // Injetando o serviço
             builder.Services.AddScoped<IPessoaService, PessoaService>();
             builder.Services.AddScoped<IDesaparecimentoService, DesaparecimentoService>();
+
+            builder.Services.AddAutoMapper(typeof(MappingProfile));
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
