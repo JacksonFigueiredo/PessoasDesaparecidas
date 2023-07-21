@@ -31,5 +31,12 @@ namespace PessoasDesaparecidas.Controllers
         {
             return await _pessoaService.ObterTodasPessoasAsync();
         }
+
+        // DELETE: api/Pessoas/Id
+        [HttpDelete]
+        public async Task<ActionResult<bool>> DeletarPessoa(int id)
+        {
+            return await _pessoaService.DeletarPessoaAsync(id);
+        }
     }
 }

@@ -23,6 +23,19 @@ namespace WebApplication1.Services
             return pessoa;
         }
 
+        public async Task<bool> DeletarPessoaAsync(int id)
+        {
+            var pessoa = await _context.Pessoas.FindAsync(id);
+            if (pessoa == null)
+            {
+                return false;
+            }
+
+            _context.Pessoas.Remove(pessoa);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
         public async Task<List<Pessoa>> ObterTodasPessoasAsync()
         {
             return await _context.Pessoas.ToListAsync();

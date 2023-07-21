@@ -7,5 +7,6 @@ namespace PessoasDesaparecidas.Interfaces
     {
         Task<Pessoa> CriarPessoaAsync(string nome, Sexo sexo, DateTime dataDeNascimento, CorDosOlhos corDosOlhos);
         Task<List<Pessoa>> ObterTodasPessoasAsync();
+        Task<bool> DeletarPessoaAsync(int id);
     }
 }
