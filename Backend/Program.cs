@@ -5,6 +5,7 @@ using PessoasDesaparecidas.Data;
 using PessoasDesaparecidas.Helpers;
 using PessoasDesaparecidas.Interfaces;
 using PessoasDesaparecidas.Services;
+using System.Text.Json.Serialization;
 using WebApplication1.Services;
 
 namespace WebApplication1
@@ -23,8 +24,14 @@ namespace WebApplication1
             // Injetando o serviço
             builder.Services.AddScoped<IPessoaService, PessoaService>();
             builder.Services.AddScoped<IDesaparecimentoService, DesaparecimentoService>();
+            builder.Services.AddScoped<IRelatorioService, RelatorioService>();
 
             builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+            builder.Services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+            });
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
