@@ -9,6 +9,11 @@ namespace PessoasDesaparecidas.Data
 
             public DataContext(DbContextOptions<DataContext> options) : base(options)
             {
+
             }
+
+
+
+
         }
 }

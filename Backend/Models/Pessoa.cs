@@ -4,6 +4,12 @@ namespace WebApplication1.Models
 {
     public class Pessoa
     {
+        public Pessoa()
+        {
+                
+        }
+
+        public int Id { get; set; }
         public string Nome { get; set; }
         public Sexo SexoPessoa { get; set; }
         public DateTime DataDeNascimento { get; set; }
@@ -15,11 +21,6 @@ namespace WebApplication1.Models
             SexoPessoa = sexo;
             DataDeNascimento = dataDeNascimento;
             CorDosOlhosPessoa = corDosOlhos;
-        }
-
-        public override string ToString()
-        {
-            return $"Nome: {Nome}, Sexo: {SexoPessoa}, Data de Nascimento: {DataDeNascimento.ToShortDateString()}, Cor dos Olhos: {CorDosOlhosPessoa}";
         }
     }
 }

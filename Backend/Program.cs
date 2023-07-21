@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using PessoasDesaparecidas.Data;
+using PessoasDesaparecidas.Interfaces;
 using WebApplication1.Services;
 
 namespace WebApplication1
@@ -17,7 +18,7 @@ namespace WebApplication1
             builder.Services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase("Desaparecimentos"));
 
             // Injetando o serviço
-            builder.Services.AddScoped<PessoaService>();
+            builder.Services.AddScoped<IPessoaService, PessoaService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
